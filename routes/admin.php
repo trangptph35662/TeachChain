@@ -5,7 +5,9 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('admin')->as('admin.')
+Route::prefix('admin')
+->as('admin.')
+->middleware(['auth', 'isAdmin'])
 ->group(function()
 {
 
